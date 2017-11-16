@@ -1,0 +1,44 @@
+<div id="content">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= @company.name %> Members 
+			
+			<%= link_to new_user_path(company: @company),:class => "btn btn-xs btn-primary pull-right btn-circle"  do %> 
+				<i class="fa fa-plus-circle"></i>
+			<% end %>
+		</div>
+		<div class="table-responsive">
+			<table id="table-ext-1" class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>UID</th>
+						<th>Email</th>
+						<th>Role</th>
+						<th>Created At</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do |user| %>
+						<tr>
+							<td><%= user.id %></td>
+							<td><%= user.email %></td>
+							<td><%= user.role.name %></td>
+							<td><%= time_ago_in_words(user.created_at) %> ago</td>
+							<td>
+								<%= link_to  edit_user_path(user) do %>
+									<button class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></button>
+								<% end %>
+
+								<%= link_to  user_path(user), method: :delete, data: { confirm: "Are you sure?" }  do %>
+									<button class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></button>
+								<% end %>
+							</td>
+							
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div><!-- end content -->

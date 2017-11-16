@@ -1,0 +1,24 @@
+<div class="block-center mt-xl wd-xl">
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+         <a href="#">
+            <img src="<%= image_path('angle/logo.png') %>" alt="Image" class="block-center img-rounded" style="width:60%"/>
+         </a>
+      </div>
+      <div class="panel-body">
+        <p class="text-center pv">Create New Company</p>
+        <%= form_for @company, html: {class: 'form-signin'} do |f| %>
+          <div class="form-group has-feedback">
+            <%= f.label :Name %><br />
+            <%= f.text_field :name, :class => 'form-control', autofocus: true %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Create", :class => 'btn btn-lg btn-primary', :style => "width:100%"%>
+          </div>
+          <%= link_to "Skip", new_user_registration_path %>
+        <% end %>
+      </div>
+   </div>
+   <!-- END panel-->
+</div>

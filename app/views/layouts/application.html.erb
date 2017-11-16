@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="keywords" content="FBA, Amazon, Sale, Profit">
+   <meta property="og:url" content="<%= request.protocol + request.host %>"/>
+   <meta property="og:title" content="Amazon FBA Support "/>
+   <meta property="og:description"   content="Looking for more FBA inventory? 
+   FBA.support can help you filter through mile long distributor lists and follow them on a daily basis giving you real time insight as trends happen. 
+   Try out 14 day trial offer today!" />
+   <meta property="og:type" content="website"/>
+   <meta property="og:image" content="<%= image_path('angle/logo.png') %>"/>
+
+   <title>FBA.support</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <%= stylesheet_link_tag 'base' %>
+   <!-- =============== VIEW VENDOR STYLES ===============-->
+   <% unless controller?('users') && action?('edit')%>
+      <% stylesheet_link_tag params[:controller] %>
+   <% end %>
+   
+   <!-- =============== APP STYLES ===============-->
+   <%= stylesheet_link_tag 'application', media: 'all', id: "maincss" %>
+   <%= stylesheet_link_tag('wraith/themes/theme-a.css') %>
+   <%= csrf_meta_tags %>
+</head>
+
+<body>
+   <div class="wrapper">
+      <!-- top navbar-->
+      <header class="topnavbar-wrapper">
+         <%= render partial: "layouts/partials/topnavbar" %>
+      </header>
+      <!-- sidebar-->
+      <aside class="aside">
+         <%= render partial: "layouts/partials/sidebar" %>
+      </aside>
+      <!-- offsidebar-->
+      <!-- Main section-->
+      <section>
+         <!-- Page content-->
+         <!-- <p id="notice"><%= notice %></p> -->
+
+         
+         <div class="content-wrapper">
+            <%= yield %>
+         </div>
+      </section>
+      <!-- Page footer-->
+      <footer>
+         <%= render partial: "layouts/partials/footer" %>
+      </footer>
+   </div>
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <%= javascript_include_tag 'base' %>
+   <!-- =============== VIEW VENDOR SCRIPTS ===============-->
+   <%= javascript_include_tag params[:controller] %>
+   <!-- =============== APP SCRIPTS ===============-->
+   <%= javascript_include_tag 'application' %>
+   <%= javascript_include_tag :defaults %>
+   <%= yield :body_area %> 
+
+</body>
+
+</html>

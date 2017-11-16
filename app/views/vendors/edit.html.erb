@@ -1,0 +1,154 @@
+<div class="row">
+   <div class="col-lg-12">
+      <%= form_for @vendor  do |f| %>
+         <div class="panel panel-default">
+            <div class="panel-heading">New Vendor</div>
+               <div class="panel-body">
+                  <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group">
+                     <div class="panel panel-default">
+                        <div id="headingOne" role="tab" class="panel-heading">
+                           <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">General Setting</a>
+                           </h4>
+                        </div>
+                        <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                           <div class="row" style="margin:0px">
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :name %><br />
+                                 <%= f.text_field :name, :class=> 'form-control', :placeholder => 'Name' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :vendor_category %><br />
+                                 <%= f.collection_select :vendor_category_id, VendorCategory.order(:name), :id,:name,{}, :class => 'form-control' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :Account %><br />
+                                 <%= f.text_field :account_number, :class=> 'form-control', :placeholder => 'Account Number' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :leadtime %><br />
+                                 <%= f.number_field :leadtime, :class=> 'form-control', :placeholder => 'Lead Time'%>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="panel panel-default">
+                        <div id="headingContact" role="tab" class="panel-heading">
+                           <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseContact" aria-expanded="true" aria-controls="collapseContact"> Contact</a>
+                           </h4>
+                        </div>
+                        <div id="collapseContact" role="tabpanel" aria-labelledby="headingContact" class="panel-collapse collapse in">
+                           <div class="row" style="margin:0px">
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :contact %><br />
+                                 <%= f.text_field :contact, :class=> 'form-control', :placeholder => 'Contact' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :title %><br />
+                                 <%= f.text_field :title, :class=> 'form-control', :placeholder => 'Title' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :phone %><br />
+                                 <%= f.text_field :phone, :class=> 'form-control', :placeholder => 'Phone' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-3">
+                                 <%= f.label :email %><br />
+                                 <%= f.text_field :email, :class=> 'form-control', :placeholder => 'Email' %>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="panel panel-default">
+                        <div id="headingWebsite" role="tab" class="panel-heading">
+                           <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseWebsite" aria-expanded="true" aria-controls="collapseWebsite"> Website</a>
+                           </h4>
+                        </div>
+                        <div id="collapseWebsite" role="tabpanel" aria-labelledby="headingWebsite" class="panel-collapse collapse in">
+                           <div class="row" style="margin:0px">
+                              <div class="form-group has-feedback panel-body col-md-4 col-sm-6">
+                                 <%= f.label :website %><br />
+                                 <%= f.text_field :website, :class=> 'form-control', :placeholder => 'Website' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4 col-sm-3">
+                                 <%= f.label :login %><br />
+                                 <%= f.text_field :login, :class=> 'form-control', :placeholder => 'Login' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4 col-sm-3">
+                                 <%= f.label :password %><br />
+                                 <%= f.text_field :password, :class=> 'form-control', :placeholder => 'Password' %>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="panel panel-default">
+                        <div id="headingAddreess" role="tab" class="panel-heading">
+                           <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseAddress" aria-expanded="true" aria-controls="collapseAddress"> Address</a>
+                           </h4>
+                        </div>
+                        <div id="collapseAddress" role="tabpanel" aria-labelledby="headingAddreess" class="panel-collapse collapse in">
+                           <div class="row" style="margin:0px">
+                              <div class="form-group has-feedback panel-body col-md-6 col-sm-6">
+                                 <%= f.label :addressline1 %>
+                                 <%= f.text_field :addressline1, :class=> 'form-control', :AddressLine1 => 'Website' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-6 col-sm-6">
+                                 <%= f.label :addressline2 %>
+                                 <%= f.text_field :addressline2, :class=> 'form-control', :placeholder => 'Addressline2' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :city %>
+                                 <%= f.text_field :city, :class=> 'form-control', :placeholder => 'City' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :zipcode %>
+                                 <%= f.text_field :zipcode, :class=> 'form-control', :placeholder => 'Zipcode' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :state %>
+                                 <%= f.text_field :state, :class=> 'form-control', :placeholder => 'State' %>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="panel panel-default">
+                        <div id="headingRef" role="tab" class="panel-heading">
+                           <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseRef" aria-expanded="true" aria-controls="collapseRef"> Ref</a>
+                           </h4>
+                        </div>
+                        <div id="collapseRef" role="tabpanel" aria-labelledby="headingRef" class="panel-collapse collapse in">
+                           <div class="row" style="margin:0px">
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :ref_name %>
+                                 <%= f.text_field :ref_name, :class=> 'form-control', :AddressLine1 => 'Ref Name' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :ref_title %>
+                                 <%= f.text_field :ref_title, :class=> 'form-control', :placeholder => 'Ref Title' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :ref_phone %>
+                                 <%= f.text_field :ref_phone, :class=> 'form-control', :placeholder => 'Ref Phone' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :ref_email %>
+                                 <%= f.text_field :ref_email, :class=> 'form-control', :placeholder => 'Ref Email' %>
+                              </div>
+                              <div class="form-group has-feedback panel-body col-md-4">
+                                 <%= f.label :ref_fax %>
+                                 <%= f.text_field :ref_fax, :class=> 'form-control', :placeholder => 'Ref Fax' %>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group panel-body">
+                        <button type="submit" class="btn btn-info">Update</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      <% end %>
+   </div>
+</div>

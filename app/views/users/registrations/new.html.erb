@@ -1,0 +1,31 @@
+<section class="banner2">
+   <div class="container">
+    <div class="banner_caption sign_up"><div class="signup_txt"><p>Sign up now to unlock your amazon business potential, no credit card needed!</p></div>
+      <div class="sign_in">
+        <h2>Sign up to get instant access</h2>
+        <div class="input_bx">
+           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.email_field :email, placeholder: "Your Email Address", autofocus: true %>
+            <%= f.fields_for :company do |builder| %>
+              <%= builder.text_field :name, placeholder: "Company" %>
+            <%end%>
+
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off",placeholder: "Password" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off",placeholder: "Confirm" %>
+
+
+            <div class="clear"></div>
+            <%= f.submit "Sign UP", :style => "background:#2f4f98;color:#FFFFFF" %>
+            <div class="forget"><a href="<%= new_user_session_path %>">Sign IN</a></div>              
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,159 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+   <nav class="sidebar" data-sidebar-anyclick-close="">
+      <!-- START sidebar nav-->
+      <ul class="nav">
+         <!-- START user info-->
+         <li class="has-user-block">
+            <div id="user-block" class="collapse">
+               <div class="item user-block">
+                  <!-- User picture-->
+                  <!-- <div class="user-block-picture">
+                     <div class="user-block-status">
+                        <img src="<%= image_path('angle/user/02.jpg') %>" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle" />
+                        <div class="circle circle-success circle-lg"></div>
+                     </div>
+                  </div> -->
+                  <!-- Name and Job-->
+                  <div class="user-block-info">
+                     <span class="user-block-name"><%= current_user.email %></span>
+                     <span class="user-block-role"><%= current_user.role.name %> </span>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <!-- END user info-->
+         <!-- Iterates over all sidebar items-->
+         <li class="nav-heading">
+            <span>Main Navigation</span>
+         </li>
+         <!-- <li class="<%= 'active' if controller?('dashboard')%>">
+            <% if controller?('dashboard') && action_name == 'dashboard_buyer' %> 
+               <%= link_to dashboard_dashboard_buyer_path do %>
+                  <em class="icon-speedometer"></em>
+                  <span class="hidden-sm hidden-xs">Dashboard</span>
+               <% end %>
+            <% elsif controller?('dashboard') && action_name == 'dashboard_manager' %>
+               <%= link_to dashboard_dashboard_manager_path do %>
+                  <em class="icon-speedometer"></em>
+                  <span class="hidden-sm hidden-xs">Dashboard</span>
+               <% end %>
+            <% else %>
+               <%= link_to dashboard_dashboard_admin_path do %>
+                  <em class="icon-speedometer"></em>
+                  <span class="hidden-sm hidden-xs">Dashboard</span>
+               <% end %>
+            <% end %>
+               
+         </li> -->
+
+         <li class="<%= 'active ' if controller?('vendors')%>"><%= link_to('Catalogs', vendors_path(:user => current_user))  %> </li>
+         <!-- <li class="<%= 'active' if controller?('vendors')%>">
+            <a href="#vendor" title="Layouts" data-toggle="collapse">
+               <em class="fa fa-briefcase"></em>
+               <span>Vendors</span>
+            </a>
+            <ul id="vendor" class="nav sidebar-subnav collapse">
+               <li class="<%= 'active' if controller?('vendors') && action?('index') %>">
+                  <%= link_to 'List', vendors_path(:user => current_user) %>
+               </li>
+               <li class="<%= 'active' if controller?('vendor_categoreis') && action?('index') %>">
+                  <%= link_to 'Category', vendor_categories_path %>
+               </li>
+            </ul>
+         </li> -->
+
+         <li class="<%= 'active' if controller?('vendoritems') || controller?('skynets')%>">
+          <%= link_to 'Ready For Purchase', new_skynet_path(:company => current_user.company_id) %>
+            <!-- <a href="#vendoritems" title="Layouts" data-toggle="collapse">
+               <em class="fa fa-tags"></em>
+               <span>Ready For Purchase</span>
+            </a>
+            <ul id="vendoritems" class="nav sidebar-subnav collapse">
+                <li class="<%= 'active' if controller?('vendoritems') && action?('index') %>">
+                  <%= link_to 'List', vendoritems_path(:company => current_user.company_id) %>
+                </li>
+                <li class="<%= 'active' if controller?('skynets') %>">
+                  <a href="#skynet_page" title="Skynet" data-toggle="collapse">
+                     <span>Skynet</span>
+                  </a>
+                  <ul id="skynet_page" class="nav sidebar-subnav collapse">
+                      <li class="<%= 'active' if controller?('skynets') && action?('new') %>">
+                        <%= link_to 'Upload', new_skynet_path() %>
+                      </li>
+                      <li class="<%= 'active' if controller?('skynets') && action?('index') %>">
+                        <%= link_to 'List', skynets_path() %>
+                      </li>
+                  </ul>
+               </li>
+                
+            </ul> -->
+         </li>
+
+         
+
+         <% if current_user.role != 'Admin' %>
+            <!-- <li class="<%= 'active' if controller?('skynets')%>">
+               <a href="#skynet" title="Layouts" data-toggle="collapse">
+                  <em class="fa fa-database"></em>
+                  <span>Skynet</span>
+               </a>
+               <ul id="skynet" class="nav sidebar-subnav collapse">
+                  <li class="<%= 'active' if controller?('skynets') && action?('new') %>">
+                    <%= link_to 'New', new_skynet_path %>
+                  </li>
+                  <!--li class="<%= 'active' if controller?('skynets') && action?('list') %>">
+                    <%= link_to 'List', skynets_path %>
+                  </li
+               </ul>
+            </li> -->
+         <% end %>
+         
+        <li class="<%= 'active' if controller?('companies') || controller?('registrations') %>">
+            <a href="#setting" title="Setting" data-toggle="collapse">
+               <em class="fa fa-briefcase"></em>
+               <span>Setting</span>
+            </a>
+            <ul class="nave  sidebar-subnav collapse" id="setting">
+              <% if current_user.role.name == 'Manager' %>
+                <li class="<%= 'active' if controller?('companies')%>">
+                  <a href="#company" title="Layouts" data-toggle="collapse">
+                     <em class="icon-people"></em>
+                     <span>Company Setting</span>
+                  </a>
+                  <ul id="company" class="nav sidebar-subnav collapse">
+                    <li class="<%= 'active' if controller?('companies') && action?('edit') %>" >
+                      <%= link_to edit_company_path(current_user.company) do %>
+                         <span>Company</span>
+                      <% end %>
+                    </li>
+                    <li class="<%= 'active' if controller?('companies') && action?('show') %>" >
+                     <%= link_to company_path(current_user.role) do %>
+                       <span>Users</span>
+                     <% end %>
+                    </li>
+                  </ul>
+                </li>
+              <% elsif current_user.role.name == 'Admin' %>
+                <li class="link">
+                    <%= link_to companies_path do %>
+                      <em class="icon-people"></em>
+                      <span>Companies</span>
+                    <% end %>
+                </li>
+              <% end %>
+              <li class="<%= 'active' if controller?('users/registrations') %>">
+                <%= link_to edit_user_registration_path do %>
+                  <em class="icon-user"></em>
+                  <span>Account</span>
+                <% end %>
+              </li>
+            </ul>
+        </li>
+
+        
+      </ul>
+      <!-- END sidebar nav-->
+   </nav>
+</div>
+<!-- END Sidebar (left)-->

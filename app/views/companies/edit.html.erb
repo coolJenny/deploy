@@ -1,0 +1,83 @@
+<div class="row">
+   <div class="col-lg-12">
+      <!-- START panel-->
+      <%= form_for @company , html: {class: 'form-signin'} do |f| %>
+      <div id="panelDemo13" class="panel panel-default">
+         <div class="panel-heading">My Company</div>
+         <div class="panel-body">
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group">
+               <div class="panel panel-default">
+                  <div id="headingOne" role="tab" class="panel-heading">
+                     <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">          General Setting        </a>
+                     </h4>
+                  </div>
+                  <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                      <div class="form-group has-feedback panel-body">
+                        <%= f.label :name %><br />
+                        <%= f.text_field :name, :class => 'form-control',autofocus: true %>
+                      </div>
+                  </div>
+               </div>
+               <div class="panel panel-default">
+                  <div id="headingTwo" role="tab" class="panel-heading">
+                     <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >AWS Setting </a>
+                     </h4>
+                  </div>
+                  <div id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo" class="panel-collapse collapse in">
+                    <div class="panel-body ">
+                      <div class="form-group has-feedback col-md-4">
+                        <%= f.label :aws_api_key %><br />
+                        <%= f.text_field :aws_api_key, :class => 'form-control' %>
+                      </div>
+                      <div class="form-group has-feedback col-md-4">
+                        <%= f.label :aws_api_secretkey %><br />
+                        <%= f.text_field :aws_api_secretkey, :class => 'form-control' %>
+                      </div>
+                      <div class="form-group has-feedback col-md-4">
+                        <%= f.label :aws_assoicate_tag %><br />
+                        <%= f.text_field :aws_assoicate_tag, :class => 'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+               <div class="panel panel-default">
+                  <div id="headingThree" role="tab" class="panel-heading">
+                     <h4 class="panel-title"><a data-toggle="collapse"  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >Company Address</a>
+                     </h4>
+                  </div>
+                  <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree" class="panel-collapse collapse in">
+                     <div class="panel-body">
+                      <div class="form-group has-feedback  col-md-6">
+                        <%= f.label :addressline1 %><br />
+                        <%= f.text_field :addressline1, :class => 'form-control' %>
+                      </div>
+                       <div class="form-group has-feedback col-md-6">
+                        <%= f.label :addressline2 %><br />
+                        <%= f.text_field :addressline2, :class => 'form-control' %>
+                      </div>
+                       <div class="form-group has-feedback  col-md-4">
+                        <%= f.label :city %><br />
+                        <%= f.text_field :city, :class => 'form-control' %>
+                      </div>
+                       <div class="form-group has-feedback  col-md-4">
+                        <%= f.label :zipcode %><br />
+                        <%= f.text_field :zipcode, :class => 'form-control' %>
+                      </div>
+                       <div class="form-group has-feedback  col-md-4">
+                        <%= f.label :state %><br />
+                        <%= f.text_field :state, :class => 'form-control' %>
+                      </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END panel-->
+      <div class="actions">
+        <%= f.submit "Update", :class => 'btn btn-lg btn-primary', :style => "width:100%" %>
+      </div>
+      <% end %>
+   </div>
+</div>
+

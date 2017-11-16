@@ -1,0 +1,26 @@
+<section class="banner2">
+  <div class="container">
+    <div class="banner_caption pddng_zero">
+      <div class="sign_in">
+        <h2>Sign in to continue</h2>
+        <div class="input_bx">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.email_field :email, placeholder: "Your Email Address", autofocus: true %>
+            <%= f.password_field :password, placeholder: "Enter Password", autocomplete: "off" %>
+            <% if devise_mapping.rememberable? -%>
+              <label>
+                <%= f.check_box :remember_me %>
+                Remember Me
+              </label>
+                
+            <% end %>
+            <div class="clear"></div>
+            <%= f.submit "Sign in", :style => "background:#2f4f98;color:#FFFFFF" %>
+            <div class="forget"><a href="<%= new_password_path(resource_name) %>">Forget Password?</a><a href="<%= new_registration_path(resource_name) %>">Sign up</a></div>              
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

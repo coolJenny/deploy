@@ -1,0 +1,76 @@
+<div id="content">
+	<div class="content-inner">
+		<div class="panel panel-default">
+         <div class="panel-heading">
+            <div class="panel-title">Vendor</div>
+            <%= select_tag(:vendor_id, options_from_collection_for_select(current_user.company.vendors.all, :id, :name), :class => 'form-control chosen-select input-md') %>
+         </div>
+         <div class="panel-body">
+            <div class="row pv-lg">
+               <div class="col-lg-12">
+                     <!-- <div class="jqgrid-responsive mb-lg" style="width:100%;overflow:auto;">
+                        <table id="jqGridItemList"></table>
+                        <div id="jqGridItemListPager"></div>
+                      </div> -->
+
+                      <div class="table-responsive">
+                         <table id="datatable_itemlist" class="table table-striped" style="width: 800px; margin: 0 auto;">
+                            <thead>
+                               <tr>
+                                  <!-- <th></th> -->
+                                  <th >ID</th>
+                                  <th style="min-width:200px;">NAME</th>
+                                  <th >ASIN</th>
+                                  <th>VendorSKU</th>
+                                  <th >UPC</th>
+                                  <th>COST</th>
+                                  <th>Packcount</th>
+                                  <th>PackCost</th>
+                                  <th >BBP</th>
+                                  <th>Profit</th>
+                                  <th>Margin</th>
+                                  <th>FBAfee</th>
+                                  <th>ComPCT</th>
+                                  <th>ComFee</th>
+                                  <th>EST</th>
+                                  <th>OFFER</th>
+                                  <th>FBA</th>
+                                  <th>FBM</th>
+                               </tr>
+                            </thead>
+                            <thead id="table_search_row">
+                               <tr>
+                                  <!-- <th></th> -->
+                                  <th >ID</th>
+                                  <th style="min-width:200px;">NAME</th>
+                                  <th >ASIN</th>
+                                  <th>VendorSKU</th>
+                                  <th >UPC</th>
+                                  <th>COST</th>
+                                  <th>Packcount</th>
+                                  <th>PackCost</th>
+                                  <th >BBP</th>
+                                  <th>Profit</th>
+                                  <th>Margin</th>
+                                  <th>FBAfee</th>
+                                  <th>ComPCT</th>
+                                  <th>ComFee</th>
+                                  <th>EST</th>
+                                  <th>OFFER</th>
+                                  <th>FBA</th>
+                                  <th>FBM</th>
+                               </tr>
+                            </thead>
+                            <tbody></tbody>
+                         </table>
+                      </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	</div><!-- end content inner -->
+</div><!-- end content -->
+<%= javascript_tag do %>
+  window.vendor_id = "<%= @vendor_id %>";
+<% end %>
+

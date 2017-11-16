@@ -1,0 +1,2 @@
+module VendoritemsHelper
+end

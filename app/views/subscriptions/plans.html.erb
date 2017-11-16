@@ -1,0 +1,153 @@
+<div class="subscription_plan">
+   <div id="pricing-table" class="clear">     
+        <div class="col-sm-3">
+        <%= form_tag('/stripe_checkout',{method: :post, autocomplete: :"off"})  do  %>
+          <div class="plan">
+            <%= hidden_field_tag "plan_id", "cfe53be3-d40d-4d25-8e6c-f380c2f725a6" %>
+            <%= hidden_field_tag "amount", 900 %>
+            <%= hidden_field_tag "couponCode","",:class=>"couponcode" %>
+            <!-- <input class="couponcode" name="couponCode" type="hidden" value= 0 > -->
+            <p>
+            </p>
+            <h3><%= 'Lite' %><span>$<%= 9.99 %></span></h3>
+            <ul>
+              <li><b><%= 30 %></b> Day Free Trial</li>
+              <li>Daily Vendor Suggestions</li>
+              <li>Analysis up to 100k Sku Catalogs Daily</li>
+            </ul>
+            <div class= "buttons">
+            <button type="submit" class="pay-btn"><span>Start FreeTrial</span></button>
+            <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button paybtn"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount=<%= 900 %>
+                  data-locale="auto">
+          </script> -->
+          </div>
+          </div>
+          <% end %>
+        </div>  
+        <div class="col-sm-3">
+        <%= form_tag('/stripe_checkout',{method: :post, autocomplete: :"off"})  do  %>
+          <div class="plan">
+            <%= hidden_field_tag "plan_id", "29.99" %>
+            <%= hidden_field_tag "amount", 2900 %>
+            <%= hidden_field_tag "couponCode","",:class=>"couponcode" %>
+            <p>
+            </p>
+            <h3><%= 'Mid' %><span>$<%= 29.99 %></span></h3>
+            <ul>
+              <li><b><%= 30 %></b> Day Free Trial</li>
+              <li>Includes "Buy Now" Filter</li>
+              <li>Daily refresh BBP and Sales Rank</li>
+             
+            </ul>
+            <div class= "buttons">
+            <button type="submit" class="pay-btn"><span>Start FreeTrial</span></button>
+            <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button paybtn"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount=<%= 900 %>
+                  data-locale="auto">
+          </script> -->
+          </div>
+          </div>
+          <% end %>
+        </div>
+        
+         
+        <div class="col-sm-3">
+        <%= form_tag('/stripe_checkout',{method: :post, autocomplete: :"off"})  do  %>
+          <div class="plan">
+            <%= hidden_field_tag "plan_id", "Enterprise" %>
+            <%= hidden_field_tag "amount", 4900 %>
+            <%= hidden_field_tag "couponCode","",:class=>"couponcode" %>
+            <p>
+            
+            </p>
+            <h3><%= 'Executive' %><span>$<%= 49.99 %></span></h3>
+            <ul>
+              <li><b><%= 30 %></b>  Day Free Trial</li>
+              <li>Purchase Orders and oh so much more</li>
+             
+
+            </ul>
+            <div class= "buttons">
+            <button type="submit" class="pay-btn"><span>Start FreeTrial</span></button>
+            <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button paybtn"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount=<%= 900 %>
+                  data-locale="auto">
+          </script> -->
+          </div>
+          </div>
+          <% end %>
+        </div>
+        <div class="col-sm-3">
+                <%= form_tag('/stripe_checkout',{method: :post, autocomplete: :"off"})  do  %>
+
+        <div class="plan">
+        <%= hidden_field_tag "plan_id", "enterprise" %>  
+          <h3><%= "Enterprise" %></h3>
+          <div class="contactform">
+          <h4>Contact for pricing</h4>
+          </div>
+          <br>
+          <ul>
+             <li>Custom quotes</li>
+              <li>Outbound shipments</li>
+              <li>Inbound Claims</li>
+          </ul>
+          <div class= "buttons">
+          <button type="submit" class="pay-btn"><span>Start FreeTrial</span></button>
+          <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button paybtn"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="A month's subscription"
+                data-amount=<%= 900 %>
+                data-locale="auto">
+        </script> -->
+          </div>
+          </div>
+       <% end %>
+       </div>
+      </div>
+       
+      <div class="promo">
+        <span>Promo Code:</span>
+        <!--<%= text_field_tag  (:couponCode )  %> -->
+        <input type="text" onchange="changedCouponCode(this.value)">
+         <% flash.each do |key, value| %>
+           <% if key=="coupon_error" %>
+              <div style="font-size:30px;color:red">
+                    <%= value %>
+              </div>
+            <% end %>
+        <% end %>
+     </div>
+  </div>
+</div>
+
+ <script>
+    
+    var buttons = document.getElementsByClassName("stripe-button-el");
+    for (var i=0; i < buttons.length; i++){
+      document.getElementsByClassName("stripe-button-el")[i].children[0].innerText = 'Start Free Trail';  
+      document.getElementsByClassName("stripe-button-el")[i].addEventListener("click", onClickTrialButton);
+    }
+    function changedCouponCode(val){
+      console.log(val);
+      var couponcodes = document.getElementsByClassName("couponcode");
+      for (var i=0; i < couponcodes.length; i++){
+        document.getElementsByClassName("couponcode")[i].value = val; 
+      }
+    }
+    function onClickTrialButton(){
+
+      // var iframe = document.getElementsByTagName("iframe");
+      // console.log(iframe);
+      // var iframeDoc = (iframe[0].contentDocument) ? iframe[0].contentDocument : iframe[0].contentWindow.document;
+      // iframeDoc.getElementsByClassName("Button-content")[0].children[0].innerText="Start Free Trial";
+      // iframeDoc.getElementsByClassName("Button-content")[0].children[0].children[0].children[0].innerText="";
+    }
+  </script>

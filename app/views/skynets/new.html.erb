@@ -1,0 +1,128 @@
+  <div class="row">
+  <div class="col-md-12 panel panel-default panel-body">
+    <div class=" col-md-3">
+       <div classs="col-md-12">
+          <span >
+            <%= 'Upload File TO Skynet.' if !@name || @name.blank? %>
+            <%= @name unless !@name || @name.blank? %>
+          </span>
+          
+        </div>
+        <div style="margin-top:20px">
+          <%= form_tag({action: :create}, multipart: true, id: 'filefeed') do %>
+            <%= hidden_field_tag 'form_type' ,'fileupload' %>
+            <span class="btn btn-success fileinput-button"><i class="fa fa-fw fa-plus"></i>
+              <span>Select File</span>
+              <%= file_field_tag 'file_field' , accept: 'text/csv' %>
+            </span>
+          <% end %> 
+        </div>
+    </div>
+    <div class="col-md-9" >
+       <%= form_for @skynet , html: {class: 'form-signin'} do |f| %>
+       <%= hidden_field_tag 'form_type' ,'selectheader' %>
+       <%= hidden_field_tag 'file_path' ,@tempfile %>
+       <%= hidden_field_tag 'file_name' ,@name %>
+        <div class="actions" >
+            <%= submit_tag "Upload", :class => 'btn btn-lg btn-primary' %>
+          </div>
+        <div class="row col-md-12">
+          <div class="form-group has-feedback col-md-4">
+            <%= f.label :vendor_id, 'Vendor' %><br>
+            <%= select_tag(:vendor_id, options_from_collection_for_select(current_user.company.vendors.all, :id, :name), :class => 'form-control chosen-select input-md') %>
+          </div>
+          <div class="form-group has-feedback col-md-4">
+            <%= f.label :skynet_id_type_id, "ID Type" %><br>
+            <%= f.collection_select :skynet_id_type_id, SkynetIdType.order(:name),:id,:name, {}, {:class => 'form-control chosen-select input-md'} %>
+          </div>
+          <div class="form-group has-feedback col-md-4">
+            <%= f.label :cost_header, "Cost Header" %><br>
+            <%= select_tag :cost_header, options_for_select(@row), :class => 'form-control chosen-select input-md' %>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group has-feedback col-md-4">
+            <%= label :vendortitle_header, "Vendor ItemName" %><br>
+            <%= select_tag :vendortitle_header, options_for_select(@row), :class => 'form-control chosen-select input-md' %>
+          </div>
+          <div class="form-group has-feedback col-md-4">
+            <%= label :index_header, "Index Header" %><br>
+            <%= select_tag :index_header, options_for_select(@row), :class => 'form-control chosen-select input-md' %>
+          </div>
+          <div class="form-group has-feedback col-md-4">
+            <%= label :vendorsku_header, "Vendor SKU" %><br>
+            <%= select_tag :vendorsku_header, options_for_select(@row), :class => 'form-control chosen-select input-md' %>
+          </div>
+        </div>           
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row pv-lg">
+                <div class="table-responsive">
+                   <table id="datatable_skynethistory" class="table table-striped">
+                      <thead>
+                         <tr>
+                            <th style="width:20%">FileName</th>
+                            <th style="width:25%">Vendor</th>
+                            <th style="width:25%">OutPut</th>
+                            <th style="width:15%">Created At</th>
+                         </tr>
+                      </thead>
+                      <tbody></tbody>
+                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">Vendor</div>
+        <%= select_tag(:vendor_id, options_from_collection_for_select(current_user.company.vendors.all, :id, :name), :class => 'form-control chosen-select input-md') %>
+      </div>
+      <div class="panel-body">
+        <div class="row pv-lg">
+          <div class="col-lg-12">
+          <div class="table-responsive">
+             <table id="datatable_itemlist" class="table table-striped" style="width: 800px; margin: 0 auto;">
+                <thead>
+                   <tr>
+                      <th >ID</th>
+                      <th style="min-width:200px;">NAME</th>
+                      <th >ASIN</th>
+                      <th>VendorSKU</th>
+                      <th >UPC</th>
+                      <th>COST</th>
+                      <th>Packcount</th>
+                      <th>PackCost</th>
+                      <th >BBP</th>
+                      <th>Profit</th>
+                      <th>Margin</th>
+                      <th>FBAfee</th>
+                      <th>ComPCT</th>
+                      <th>ComFee</th>
+                      <th>EST</th>
+                      <th>OFFER</th>
+                      <th>FBA</th>
+                      <th>FBM</th>
+                   </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<%= javascript_tag do %>
+  window.vendor_id = "<%= @vendor_id %>";
+<% end %>

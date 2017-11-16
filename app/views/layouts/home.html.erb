@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="keywords" content="FBA, Amazon, Sale, Profit">
+   <meta property="og:url" content="<%= request.protocol + request.host %>"/>
+   <meta property="og:title" content="Amazon FBA Support "/>
+   <meta property="og:description"   content="Looking for more FBA inventory? 
+   FBA.support can help you filter through mile long distributor lists and follow them on a daily basis giving you real time insight as trends happen. 
+   Try out 14 day trial offer today!" />
+   <meta property="og:type" content="website"/>
+   <meta property="og:image" content="<%= image_path('angle/logo.png') %>"/>
+   <title>FBA.support</title>
+   <link rel="shortcut icon" href="favicon.ico" />
+
+   <!-- =============== VENDOR STYLES ===============-->
+
+   <%= stylesheet_link_tag 'base' %>
+   <!-- =============== VIEW VENDOR STYLES ===============-->
+   <%= stylesheet_link_tag params[:controller] %>
+   <!-- =============== APP STYLES ===============-->
+   <%= stylesheet_link_tag 'application', media: 'all', id: "maincss" %>
+   <!-- =======================Fonts Officina, Playfair, ICT ================== -->
+   <!-- <link href="https://www.fontify.me/wf/ff3b055f0fede5d586bb89322145779d" rel="stylesheet" type="text/css"> -->
+   <!-- <link href="https://www.fontify.me/wf/1cb6151ab7857bda045f4791b5e6a54e" rel="stylesheet" type="text/css"> -->
+   <!-- <link href="https://www.fontify.me/wf/87344a453ee99c8db7cc5087d749522f" rel="stylesheet" type="text/css"> -->
+   <!-- Officina Sans Std Bold-->
+   <!-- <link href="https://www.fontify.me/wf/ad187e4ccaec8125de687dcaa20d9f2c" rel="stylesheet" type="text/css"> -->
+
+   <%= csrf_meta_tags %>
+</head>
+   
+<body class="layout-h">
+
+   <div class="wrapper">
+      <!-- top navbar-->
+      <header class="topnavbar-wrapper">
+         <%= render partial: "layouts/partials/hometopbar" %>
+      </header>
+            
+      <!-- Main section-->
+      <div>
+         <!-- Page content-->
+         <div class="">
+            <%= yield %>
+         </div>
+      </div>
+      <!-- Page footer-->
+      <%= render partial: "layouts/partials/homefooter" %>
+      <!--footer style="margin-left:0px; position:relative; height:auto;">
+      </footer-->
+   </div>
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <script src="https://js.gleam.io/oi-2uuXe32l.js" async="async"></script>
+  <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
+  <script src="//vjs.zencdn.net/4.1/video.js"></script>   <%= javascript_include_tag 'base' %>
+   <!-- =============== VIEW VENDOR SCRIPTS ===============-->
+   <%= javascript_include_tag params[:controller] %>
+   <!-- =============== APP SCRIPTS ===============-->
+   <%= javascript_include_tag 'application' %>
+   <%= javascript_include_tag :defaults %>
+   <%= yield :body_area %> 
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+* { margin: 0; padding: 0; }
+body { }
+.padding0 { padding: 0 !important }
+.paddingL0 { padding-left: 0 !important }
+.paddingR0 { padding-right: 0 !important }
+.paddingT20 { padding-top: 20px !important }
+.marginT10 { margin-top: 10px; }
+.spacer5 { height: 5px; clear: both; display: block; }
+.spacer10 { height: 10px; clear: both; display: block; }
+.spacer20 { height: 20px; clear: both; display: block; }
+.ol, ul, li { list-style: none; }
+ul { padding: 0; margin: 0 !important; }
+/*a, a:hover { text-decoration: none !important; }*/
+.clear { clear: both }
+/******** main_css ********/
+header { background: image-url("back/banner.jpg") no-repeat scroll 100% 100% / cover rgba(0, 0, 0, 0); height: 850px; }
+header nav { position: absolute; top: 0; width: 100%; padding: 20px 0; }
+header #menus { float: right; }
+#menus ul li a { color: #fff; font-size: 18px; margin: 0 0 0 30px; padding: 25px 0 5px; text-transform: uppercase; }
+#menus ul li.active a { border-bottom: 2px solid #fff; }
+#menus ul li a:hover { background: none; border-bottom: 2px solid #fff; }
+#menus ul li a:focus { background: none; }
+header .navbar-toggle i { background: none repeat scroll 0 0 #fff; border-radius: 5px; font-size: 20px; padding: 8px 15px; }
+/******** Banner *******/
+.banner { }
+.banner_caption { color: #fff; text-align: center; padding: 250px 0 0; }
+.banner_caption p { font-size: 30px; font-weight: bold; text-transform: uppercase; }
+.banner_caption h1 { font-size: 30px; padding: 0 15%; line-height: 36px; }
+.banner_caption div a { border-radius: 5px; background: none; border: 2px solid #fff; padding: 15px 50px; text-transform: uppercase; font-size: 18px; margin: 20px 0; display: inline-block; color: #fff; text-decoration: none; }
+.banner_caption div a:hover { background: #fff; color: #333; }
+/****** Feature ******/
+.features { margin: 40px 0 0; }
+.features .head-title { text-align: center; }
+.features .head-title h3 { font-size: 28px; text-transform: uppercase; }
+.features .head-title p { font-size: 32px; padding: 0 20%; color: #555; }
+.feature_image { position: relative; }
+.feature_image img { width: 100%; margin: -11% 0 0; }
+.feature_image ul { position: absolute; width: 250px; }
+.feature_image ul li { padding: 0 0 75px; font-size: 16px; }
+.feature_image ul li i { display: none; }
+ul.feature_left { text-align: right; left: 14%; top: 39%; }
+ul.feature_left { padding: 25px 0; }
+ul.feature_left li:nth-child(2) { padding: 0 20px 90px; }
+ul.feature_right { right: 14%; text-align: left; top: 40%; }
+ul.feature_right li:nth-child(2) { padding: 0 0 80px 20px; }
+/***** Services ******/
+.our_services { text-align: center; }
+.our_services .head-title { margin: 0 0 60px 0; text-align: center; }
+.our_services .head-title h3 { text-transform: uppercase; font-size: 28px; }
+.our_services .head-title p { font-size: 18px; padding: 0 15%; }
+.dashboard img { position: absolute; z-index: -1; }
+/***** Signin ******/
+header { background: image-url("back/signin_banner.jpg") no-repeat scroll 100% 100% / cover rgba(0, 0, 0, 0); height: 700px; }
+.banner2 { }
+.banner2 .pddng_zero { padding: 200px 0 0 0; }
+.banner2 .banner_caption { top: 0; width: 511px; margin: 0 auto; color: #fff; text-align: center; }
+.banner2 .banner_caption .sign_in { text-align: center; }
+.banner2 .banner_caption .sign_in h2 { border-radius: 4px 4px 0 0; background: #2796c6; padding: 20px 0; font-family: "Open Sans", sans-serif; margin: 0; font-size: 24px; color: #fff; }
+.banner2 .banner_caption .sign_in .input_bx { border-radius: 0 0 4px 4px; overflow: hidden; padding: 50px 50px 60px; background: #fff; }
+.banner2 .banner_caption .sign_in .input_bx input { border-radius: 4px; height: 47px; margin: 0 0 10px 0; padding: 0 15px; border: 1px solid #ccc; width: 100%; color: #999999; font-size: 15px; }
+.banner2 .banner_caption .sign_in .input_bx label { vertical-align: middle; color: #999999; float: left; }
+.banner2 .banner_caption .sign_in .input_bx label input { height: auto; color: #999; width: auto; font-size: 14px; }
+.banner2 .banner_caption .sign_in .input_bx label input[type="checkbox"] { margin: -2px 5px 0 0; vertical-align: middle; }
+.banner2 .banner_caption .sign_in .input_bx a { font-family: "Open Sans", sans-serif; background: #2f4f98 none repeat scroll 0 0; border-radius: 4px; color: #fff; display: block; font-size: 20px; margin: 4px 0; padding: 8px 0; text-transform: uppercase; }
+.banner2 .banner_caption .sign_in .input_bx .forget { padding: 5px 0 0 0; }
+.banner2 .banner_caption .sign_in .input_bx .forget a { padding: 0; margin: 0; font-size: 14px; background: none; text-transform: none; text-decoration: underline; color: #2f4f98; font-family: "Open Sans", sans-serif; }
+.banner2 .banner_caption .sign_in .input_bx .forget a:first-child { float: left; }
+.banner2 .banner_caption .sign_in .input_bx .forget a:last-child { float: right; }
+/***** Signup ******/
+
+.banner2 .sign_up { padding: 130px 0 0 0; width: auto; }
+.banner2 .sign_up .signup_txt p { margin: 0 0 25px 0; text-transform: none; font-weight: normal; font-size: 24px; color: #fff; font-family: "Open Sans", sans-serif; }
+.banner2 .sign_up .sign_in { width: 511px; margin: 0 auto; }
+.banner2 .sign_up .sign_in a:last-child { display: none; }
+.banner2 .sign_up .sign_in .input_bx { border-radius: 0 0 4px 4px; overflow: hidden; padding: 50px 50px 40px; background: #fff; }
+/*****Footer ******/
+footer { background: image-url("back/footer.png") no-repeat scroll 100% 100% / cover rgba(0, 0, 0, 0); height: 800px; margin: 70px 0 0; position: relative; width: 100%; }
+footer img { }
+.foot_caption { text-align: center; padding: 400px 0 0; }
+.foot_caption h1 { font-size: 40px; color: #fff; text-transform: uppercase; }
+.foot_caption p { font-size: 24px; color: #fff; }
+.foot_caption a { border-radius: 3px; font-size: 16px; text-transform: uppercase; border: 2px solid #fff; background: none; color: #fff; padding: 15px 50px; margin: 20px 0 0; display: inline-block; text-decoration: none; }
+.foot_caption a:hover { background: #fff; color: #333; text-decoration: none; }
+.address { background: #333; padding: 30px 0 10px; color: #fff; text-align: center; }
+.gcap-floating-bottombox { left: calc(100% - 524px) !important; }
+
+
+/********** Responsive CSS*********/
+ @media screen and (max-width:1024px) {
+footer { margin: -50px 0 0; }
+ul.feature_left { left: 7%; top: 37%; }
+ul.feature_right { right: 8%; }
+.feature_image ul li { padding: 0 0 40px; }
+ul.feature_left li:nth-child(2) { padding: 20px 20px 50px; }
+ul.feature_right li:nth-child(2) { padding: 0 0 50px 20px; }
+}
+ @media screen and (max-width:981px) {
+#menus ul li a { margin: 0; padding: 10px 0; margin: 0 8px; font-size: 16px; }
+.head-title p { padding: 0; }
+.banner_caption h1 { padding: 0 5%; }
+.features .head-title p, .our_services .head-title p { font-size: 20px; padding: 0; }
+footer { height: auto; }
+footer img { position: static; margin: 0; }
+.address ul li { margin: 0 15px 0 0; }
+.copyright { float: left;/* margin: 15px 0 0;*/ clear: both; }
+.dashboard { height: 450px; overflow: hidden; padding: 20px 0; }
+.dashboard img { margin: 0 auto; position: static; }
+.foot_caption { padding: 200px 0 100px; }
+ul.feature_left { left: 0; }
+ul.feature_right { right: 0; }
+.feature_image ul li { padding: 0 0 25px; font-size: 15px; }
+ul.feature_left li:nth-child(2) { padding: 0 20px 30px; }
+ul.feature_right li:nth-child(2) { padding: 0 20px 25px; }
+footer { margin: 0; }
+.banner2 .sign_up .sign_in .input_bx { padding: 25px 50px 40px; }
+}
+ @media screen and (max-width:767px) {
+#menus { background: #A63378; margin: 10px 0 0; position: absolute; width: 100%; left: 0; z-index: 9; padding: 15px; }
+#menus ul li { line-height: 40px; }
+#menus ul li a:hover { border: none; color: #000; }
+header nav .navbar-toggle { margin: 0; }
+#menus ul li.active a { border-bottom: none; }
+#menus ul li a:hover { background: none; border-bottom: none; }
+}
+ @media screen and (max-width:736px) {
+.banner_caption p { font-size: 24px; }
+.banner_caption h1 { font-size: 20px; }
+}
+ @media screen and (max-width:667px) {
+header { height: 600px; }
+.feature_image ul { width: 190px; }
+ul.feature_left { top: 34%; }
+.feature_image ul li { padding: 0 0 15px; }
+ul.feature_left li:nth-child(2), ul.feature_right li:nth-child(2) { padding: 0 15px 30px; }
+ul.feature_left { left: 2%; }
+ul.feature_right { right: 4%; }
+.banner2 .pddng_zero { padding: 145px 0 0; }
+.banner2 .sign_up .signup_txt p { font-size: 17px; margin: 0 0 15px; }
+.banner2 .sign_up { padding: 98px 20px 0; }
+.banner2 .banner_caption .sign_in h2 { font-size: 20px; }
+.banner2 .sign_up .sign_in .input_bx { padding: 25px 50px 30px; }
+.gcap-floating-bottombox { left: auto; }
+.gcap-floating-bottombox { left: auto !important; }
+}
+ @media screen and (max-width:568px) {
+.feature_image img { display: none; }
+.feature_image, ul.feature_left, ul.feature_right { position: static; }
+.feature_image ul { width: auto; text-align: left; padding: 0; }
+.feature_image ul li, ul.feature_left li:nth-child(2), ul.feature_right li:nth-child(2) { padding: 0; line-height: 30px; padding: 0 0 10px; }
+.feature_image ul li i { display: block; float: left; padding: 8px 10px 0 0; }
+.features { background: #f7f7f7; padding: 20px 0; }
+.features .head-title { text-align: left; }
+.our_services .head-title { margin: 50px 0 0; }
+}
+ @media screen and (max-width:480px) {
+.feature_image { padding: 0 20px 50px; }
+.banner_caption h1 { font-size: 18px; line-height: 24px; }
+.banner_caption div a { padding: 10px 30px; }
+.features .head-title p, .our_services .head-title p { font-size: 16px; }
+.foot_caption h1 { font-size: 24px; }
+.foot_caption p { font-size: 18px; }
+.foot_caption a { padding: 10px 30px; }
+.feature_image { padding: 0; }
+.banner2 .pddng_zero { padding: 145px 20px 0; }
+.banner2 .banner_caption { width: auto; }
+.banner2 .sign_in { width: auto; }
+.banner2 .sign_up .sign_in { width: auto; }
+}
+ @media screen and (max-width:414px) {
+.logo img { width: 200px; }
+.dashboard { height: 300px; }
+header .navbar-toggle { padding: 0; }
+.banner2 .banner_caption .sign_in .input_bx { padding: 50px 20px 60px; }
+.banner2 .sign_up .sign_in .input_bx { padding: 25px 20px 30px; }
+.banner2 .sign_up .signup_txt p { font-size: 15px; }
+}
+ @media screen and (max-width:375px) {
+.logo img { width: 150px; }
+.banner2 .sign_up .signup_txt p { font-size: 14px; }
+}

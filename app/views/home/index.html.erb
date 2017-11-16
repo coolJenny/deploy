@@ -1,0 +1,157 @@
+<div class="">
+  <!-- <header>
+    <nav>
+      <div class="container">
+        <div class="col-sm-4">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menus"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars" aria-hidden="true"></i> </button>
+          <a class="logo" href="#"> <img src="<%= asset_path 'back/logo.png' %>"  class="img-responsive" alt=""> </a> </div>
+        <div class="col-sm-8">
+          <div class="collapse navbar-collapse" id="menus">
+            <ul class="nav navbar-nav">
+              <li> <a href="#top">Home</a> </li>
+              <li> <a href="#part-two">Features</a> </li>
+              <li> <a href="#part-three">Careers</a> </li>
+              <li> <a href="#part-four">Contact</a> </li>
+              <% if !current_user.present? %>
+                <li class="font_Playfair"><%= link_to('SIGN UP', new_user_registration_path)  %> </li>
+                <li class="font_Playfair"><%= link_to('SIGN IN', new_user_session_path)  %> </li>
+              <% else %>
+                <li class="font_Playfair"><%= link_to('SIGN OUT', destroy_user_session_path, :method => :delete) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="banner_caption">
+      <p>FBA Support Tool</p>
+      <h1>Starting to sell on amazon? Not sure what to to sell?</h1>
+      <h1>Our Amazon FBA tools help you identify and sell the right products! </h1>
+      <div>
+        <button class="start" type="submit"> Click here to start your free trial!</button>
+      </div>
+    </div> 
+  </header>-->
+  
+
+  <section class="banner">
+    <div class="container">
+    </div>
+  </section>
+  <section class="features" id="features">
+    <div class="container">
+      <div class="head-title">
+        <h3>Features </h3>
+        <p>We developed a software to track real time when trends are happening</p>
+      </div>
+    </div>
+    <div class="feature_image"> <img src="<%= asset_path 'back/features.png' %>" class="img-responsive">
+      <div class="container">
+        <ul class="feature_left">
+          <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Save weeks of tedious research time</li>
+          <li><i class="fa fa-check-square-o" aria-hidden="true"></i> No more unmanageable spreadsheets</li>
+          <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Accurate analysis done for thousands of products</li>
+        </ul>
+        <ul class="feature_right">
+          <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Comprehensive data to take the right decision</li>
+          <li><i class="fa fa-check-square-o" aria-hidden="true"></i> No more analysis paralysis for sourcing profitable products</li>
+          <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Accurate analysis done for thousands of products</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="our_services" id="services">
+    <div class="container">
+      <div class="head-title">
+        <h3>Our services</h3>
+        <p>Our software tells us real time when trends are happening marketplaces, vthis allows buyers process procurement on a larger scale.</p>
+      </div>
+    </div>
+    <div class="services_list">
+      <div class="container">
+        <div class="col-md-4">
+          <div class="tool">
+            <h3>Profitability Analysis Tool</h3>
+            <p>This will help sellers to gain more insight into various fees that amazon charges for the products that they want to sell on amazon. it will also giveinsight into number of sellers currently selling the product, lowest price on amazon, Amazon fees etc.After getting this research data, sellers could easily make the decision to source a particular product or not. </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dashboard"> <img src="<%= asset_path 'back/dashboard.png' %>" class="img-responsive"> </div>
+        </div>
+        <div class="col-md-4">
+          <div class="tool last">
+            <h3>Profitability Analysis Tool</h3>
+            <p>This will help sellers to gain more insight into various fees that amazon charges for the products that they want to sell on amazon. it will also giveinsight into number of sellers currently selling the product, lowest price on amazon, Amazon fees etc.After getting this research data, sellers could easily make the decision to source a particular product or not. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <footer id="contact"> <!--img src="images/footer.png" class="img-responsive" style="width:100%;"-->
+    <div class="container">
+      <div class="foot_caption">
+        <!-- <div id="wrap">
+            <div id='form_wrap'>
+              <form>
+                <label for="email">Your Message : </label>
+                <textarea  name="message" value="Your Message" id="message" ></textarea>
+                <p>Best,</p>  
+                <label for="name">Name: </label>
+                <input type="text" name="name" value="" id="name" />
+                <label for="email">Email: </label>
+                <input type="text" name="email" value="" id="email" />
+                <input type="submit" name ="submit" value="Now, I send, thanks!" />
+              </form>
+            </div>
+          </div> -->
+        <!-- <h1>FBA Support Tool</h1> -->
+        <p>Start your million dollar Amazon business today</p>
+        <%= link_to(' Click here to start your free trial!', new_user_registration_path)  %>
+        <h1>Contact US</h1>
+          <form id="contact_form"  method="post">  
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <p class="first">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" size="30" />
+                </p>
+                <p>
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" size="30" />
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" cols="40" rows="7"></textarea>
+                </p>                
+              </div>
+            </div>         
+            <div>
+              <p style="text-align:right; margin-right:10px;"><a type="button">Send</a></p>   
+            </div>
+          </form> 
+       <!--  <h1>FBA Support Tool</h1>
+        <p>Start your million dollar Amazon business today</p>
+        <%= link_to(' Click here to start your free trial!', new_user_registration_path)  %> -->
+      </div>
+    </div>
+  </footer>
+  <div class="clear"></div>
+  <div class="address">
+  <div class="container">
+    <div class="col-md-4 col-sm-12">
+      <p>36-16 29th Street, Long Island city, NY,11106</p>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <ul>
+        <li><a href="#">WWW.FBA.SUPPORT</a></li>
+        <li><a href="#">steven@fbm.support</a></li>
+      </ul>
+    </div>
+    <div class="col-md-4  col-sm-12">
+      <p class="copyright">2017-All Rights with FBA.Support </p>
+    </div>
+  </div>
+</div>

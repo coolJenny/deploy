@@ -1,0 +1,35 @@
+<div id="content">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= link_to new_vendor_category_path,:class => "btn btn-xs btn-primary pull-right btn-circle"  do %>
+				<i class="fa fa-plus-circle"></i>
+			<% end %>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Vendor Count</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @categories.each do |category| %>
+						<tr>
+							<td><%= category.name %></td>
+							<td><%= category.vendors.count %></td>
+							<td>
+								<%= link_to  edit_vendor_category_path(category) do %>
+									<button class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></button>
+								<% end %>
+								<%= link_to  vendor_category_path(category), method: :delete, data: { confirm: "Are you sure?" }  do %>
+									<button class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></button>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div><!-- end content -->

@@ -1,0 +1,18 @@
+// Place all the styles related to the vendoritems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// --- Datatables
+//= require datatables-colvis/css/dataTables.colVis
+//= require datatables/media/css/dataTables.bootstrap
+//= require datatables/media/css/editor.dataTables.min
+//= require datatables/media/css/select.dataTables.min
+//= require dataTables.fontAwesome/index
+
+thead input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
