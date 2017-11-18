@@ -60,5 +60,5 @@ namespace :deploy do
       invoke 'deploy'
     end
   end
-
   before :starting, :confirm
+ end
